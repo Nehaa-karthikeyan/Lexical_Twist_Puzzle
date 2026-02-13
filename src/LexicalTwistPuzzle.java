@@ -12,5 +12,15 @@ public class LexicalTwistPuzzle {
 
         System.out.println("Enter second word:");
         String secondWord = scanner.nextLine();
+
+        if (firstWord.contains(" ")) {
+            System.out.println(firstWord + " is an invalid word");
+            return;
+        }
+
+        if (secondWord.contains(" ")) {
+            System.out.println(secondWord + " is an invalid word");
+            return;
+        }
     }
 }
