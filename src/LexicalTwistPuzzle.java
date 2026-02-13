@@ -35,6 +35,23 @@ public class LexicalTwistPuzzle {
                     .replaceAll("[aeiou]", "@");
 
             System.out.println(transformedWord);
+        } else {
+
+            String combined = (firstWord + secondWord).toUpperCase();
+
+            int vowelCount = 0;
+            int consonantCount = 0;
+
+            for (char ch : combined.toCharArray()) {
+                if (ch == 'A' || ch == 'E' || ch == 'I'
+                        || ch == 'O' || ch == 'U') {
+                    vowelCount++;
+                } else if (Character.isLetter(ch)) {
+                    consonantCount++;
+                }
+            }
+
+            // Counts are calculated but NOT printed yet (UC7 will handle output)
         }
     }
 }
