@@ -1,4 +1,6 @@
+import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class LexicalTwistPuzzle {
     public static void main(String[] args) {
@@ -42,16 +44,37 @@ public class LexicalTwistPuzzle {
             int vowelCount = 0;
             int consonantCount = 0;
 
+            Set<Character> vowelsSet = new LinkedHashSet<>();
+            Set<Character> consonantsSet = new LinkedHashSet<>();
+
             for (char ch : combined.toCharArray()) {
                 if (ch == 'A' || ch == 'E' || ch == 'I'
                         || ch == 'O' || ch == 'U') {
                     vowelCount++;
+                    vowelsSet.add(ch);
                 } else if (Character.isLetter(ch)) {
                     consonantCount++;
+                    consonantsSet.add(ch);
                 }
             }
 
-            // Counts are calculated but NOT printed yet (UC7 will handle output)
+            if (vowelCount > consonantCount) {
+                int count = 0;
+                for (char v : vowelsSet) {
+                    System.out.print(v);
+                    count++;
+                    if (count == 2) break;
+                }
+            } else if (consonantCount > vowelCount) {
+                int count = 0;
+                for (char c : consonantsSet) {
+                    System.out.print(c);
+                    count++;
+                    if (count == 2) break;
+                }
+            } else {
+                System.out.println("Vowels and consonants are equal");
+            }
         }
     }
 }
