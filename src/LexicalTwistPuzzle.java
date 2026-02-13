@@ -22,5 +22,17 @@ public class LexicalTwistPuzzle {
             System.out.println(secondWord + " is an invalid word");
             return;
         }
+
+        String reversedFirstWord =
+                new StringBuilder(firstWord).reverse().toString();
+
+        boolean isReverse =
+                reversedFirstWord.equalsIgnoreCase(secondWord);
+
+        if (isReverse) {
+            System.out.println("The second word is the reverse of the first word");
+        } else {
+            System.out.println("The second word is NOT the reverse of the first word");
+        }
     }
 }
